@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Spam Detector</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+      html, body 
+	  {
+      min-height: 100%;
+      }
+	  
+      body, div, form, p 
+	  { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+	  
+      h1 
+	  {
+      margin: 15px 0;
+      font-weight: 400;
+      }
+	  
+      h4 
+	  {
+	  margin-bottom: 4px;
+	  }
+      
+      form 
+	  {
+      width: 100%;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 2px 5px #ccc; 
+      }
+	  
+      textarea 
+	  {
+      width: 75%;
+	  display: block;
+	  margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+     
+      input:hover, textarea:hover, select:hover 
+	  {
+      outline: none;
+      border: 1px solid #095484;
+      }
+     
+      .btn-block 
+	  {
+      margin-top: 20px;
+      text-align: center;
+      }
+	  
+      button 
+	  {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      -webkit-border-radius: 5px; 
+      -moz-border-radius: 5px; 
+      border-radius: 5px; 
+      background-color: red;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+	  
+      button:hover 
+	  {
+      background-color: green;
+      }
+	  
+      @media (min-width: 568px) 
+	  {
+      input 
+	  {
+      width: calc(35% - 20px);
+      margin: 0 0 0 8px;
+      }
+      select 
+	  {
+      width: calc(50% - 8px);
+      margin: 0 0 10px 8px;
+      }
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div class="testbox">
+      <form action="{{ url_for('predict') }}" method="POST">
+        <h1 align="center">Simple Spam Detector</h1>
+        <p align="center">Enter your text message below and it will detect if it is a spam or not.Go on! Try it.</p>
+        <hr/>
+        </div>
+        
+       
+        <h4 align="center">Your text</h4>
+        <textarea rows="10" placeholder="Enter your text here" name="message" align="center"></textarea>
+    
+        <div class="btn-block">
+          <button type="submit" >Detect</button>
+        </div>
+
+      </form>
+    </div>
+  
+  </body>
+</html>
