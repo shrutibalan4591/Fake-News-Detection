@@ -1,0 +1,13 @@
+<html>
+	<body>
+		<form>
+			<fieldset align="center">
+          			<legend>Extracted Keywords</legend>
+          				<table>
+						{%for key, value in extractions.items()%}
+						<tr><h2>{{ key }}</h2></tr>
+						{% endfor %}
+					</table>      
+        		</fieldset>
+		</form>
+	</body>
