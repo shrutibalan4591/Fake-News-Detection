@@ -101,14 +101,14 @@
   <body>
     <div class="testbox">
       <form action="{{ url_for('predict') }}" method="POST">
-        <h1 align="center">Simple Spam Detector</h1>
-        <p align="center">Enter your text message below and it will detect if it is a spam or not.Go on! Try it.</p>
+        <h1 align="center">Fake News Detector</h1>
+        <p align="center">Enter your news article below and it will detect if it is a fake news or not.Go on! Try it.</p>
         <hr/>
         </div>
         
        
-        <h4 align="center">Your text</h4>
-        <textarea rows="10" placeholder="Enter your text here" name="message" align="center"></textarea>
+        <h4 align="center">Your article</h4>
+        <textarea rows="10" placeholder="Enter your article here" name="news" align="center"></textarea>
     
         <div class="btn-block">
           <button type="submit" >Detect</button>
