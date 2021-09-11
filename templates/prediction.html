@@ -3,10 +3,10 @@
 		<form>
 			<fieldset align="center">
           			<legend>Prediction</legend>
-          				{% if prediction==1 %}
-					<h2 style="color:Red;">Prediction: <span class='danger'>Gotcha! This is a SPAM message.</span></h2>
-	  				{% elif prediction==0 %}
-					<h2 style="color:Green;">Prediction: <span class='safe'>Great! This is NOT a spam message.</span></h2>
+          				{% if prediction=='FAKE' %}
+					<h2 style="color:Red;">Prediction: <span class='danger'>Gotcha! This is a FAKE news article...Beware!</span></h2>
+	  				{% elif prediction=='REAL' %}
+					<h2 style="color:Green;">Prediction: <span class='safe'>Great! This is a REAL news article...Stay updated!</span></h2>
 	  				{% endif %}      
         		</fieldset>
 		</form>
