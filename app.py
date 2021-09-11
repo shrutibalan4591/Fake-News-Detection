@@ -2,8 +2,8 @@ import pickle
 from flask import Flask, request, render_template
 
 app = Flask(__name__)
-model = pickle.load(open('spam-model.pkl', 'rb'))
-cv = pickle.load(open('cv-transform.pkl','rb'))
+model = pickle.load(open('pac.pkl', 'rb'))
+tfidf = pickle.load(open('tfidf_vectorizer.pkl','rb'))
 
 @app.route('/')
 def home():
@@ -13,9 +13,9 @@ def home():
 @app.route('/predict',methods=['POST'])
 def predict():
     if request.method == 'POST':
-    	message = request.form['message']
-    	data = [message]
-    	vect = cv.transform(data).toarray()
+    	news = request.form['news']
+    	data = [news]
+    	vect = tfidf.transform(data)
     	my_prediction = model.predict(vect)
     	return render_template('prediction.html', prediction=my_prediction)
 
